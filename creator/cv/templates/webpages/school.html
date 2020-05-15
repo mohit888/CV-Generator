@@ -1,0 +1,45 @@
+{% extends "webpages/base.html" %}
+{% block content %}
+  
+  <form action=" " method="post" enctype="multipart/form-data">
+    <div class = "row pad-down pad-form-center">
+      <div class="container text-center red" id="notice">
+        <button type="button" class="close" aria-label="Close" onclick="closebtn()">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="col-md-5 col-sm-5 offset-sm-4 text-left bg-white borderify-login pad-lil">
+        <div class = "col-md-12 col-sm-12 text-center">
+          <h1 class="head-banner-text">Schooling Details</h1>
+        </div>
+        <br /><br />
+
+                   {% load crispy_forms_tags %}
+
+                  {% csrf_token %}
+                  {{form|crispy }}
+ 
+        <br />
+        <br />
+<div class="container">
+        <div class="row">
+            <button class="btn btn-success col-sm-2 " onclick="window.location.href = '/exp';"  value="last" name="last">last</button>
+            <p class = "col-sm-3"> </p>
+            <button class="btn btn-success col-sm-2" type="submit" value="Submit" name="submit">Submit</button>
+            <p class = "col-sm-3"> </p>
+            <button class="btn btn-success col-sm-2 " onclick="window.location.href = '/resume';" value="next" name="next">next</button>
+    </div>
+</div>
+<br/>
+<div class="container">
+        <div class="row">
+            <p class = "col-sm-4"> </p>
+            <button class="btn btn-success col-sm-4" onclick="window.location.href = '/sch';"   value="last" name="Add">Add More</button>
+
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
